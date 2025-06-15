@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const takesList = document.querySelector('.takes-box');
+  const takesSection = document.querySelector('.takes-section');
   const takes = [];
 
   fetch('../api/takes')
@@ -106,5 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
   })
   .catch(error => {
     console.error('Error fetching takes:', error);
+    takesSection.innerHTML = '';
   });
 });
