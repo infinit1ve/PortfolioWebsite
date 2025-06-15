@@ -22,7 +22,7 @@
   <body>
     <header>
       <a href="#about-section">About me</a>
-      <a href="#contact-section">Contact</a>
+      <a href="#contact-section" onclick="event.preventDefault(); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth', block: 'center'}); return false;">Contact</a>
       <a href="">Blog</a>
       <a href="">Projects</a>
     </header>
