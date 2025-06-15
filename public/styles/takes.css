@@ -42,12 +42,15 @@
   width: max-content;
   height: max-content;
   overflow: hidden;
+  gap: 4px;
+  padding-bottom: 12px;
 }
 
 .takes-left, .takes-right {
   white-space: nowrap;
   display: flex;
   width: max-content;
+  height: max-content;
   backface-visibility: hidden;
   will-change: transform;
 }
@@ -58,7 +61,7 @@
 
 .takes-box a {
   color: var(--text);
-  border: 1px solid var(--text);
+  box-shadow: 5px 5px 10px var(--shadow);
   margin: 4px;
   padding: 8px;
   border-radius: 100px;
