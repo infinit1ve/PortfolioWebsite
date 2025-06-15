@@ -55,10 +55,6 @@
   will-change: transform;
 }
 
-.takes-right {
-  margin-left: -50%;
-}
-
 .takes-box a {
   color: var(--text);
   box-shadow: 5px 5px 10px var(--shadow);

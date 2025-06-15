@@ -31,10 +31,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 2;
 }
 
 .about-section-text h3 {
   color: var(--primary);
+  z-index: 2;
 }
 
 .about-section-graphic {
@@ -44,7 +46,7 @@
 }
 
 .about-section-decoration {
-  z-index: -1;
+  z-index: 0;
   position: relative;
   width: 100vw;
   height: calc(100vh - 50px);

@@ -69,51 +69,44 @@ function shuffle(array) {
 const textWelcomeElementShuffled = shuffle(welcomeText);
 textWelcomeElement.innerHTML = textWelcomeElementShuffled[0];
 
-const icons = document.querySelectorAll('.about-section-decoration img');
-const positions = [];
-const spacing = window.innerWidth < 1023 ? window.innerHeight * 0.12 : window.innerWidth * 0.17; // Minimum distance in px between icons
+iconBomb();
 
-// Horizontal no-go zone (in vw)
-const noGoXStart = window.innerWidth * 0.12;
-const noGoXEnd = window.innerWidth * 0.88;
+window.addEventListener('resize', function() {
+  iconBomb();
+});
 
-// Vertical no-go zone (insert your own values in vh or px)
-const noGoYStart = window.innerHeight * 0.26; // <-- Change this
-const noGoYEnd = window.innerHeight * 0.88;   // <-- And this
+function iconBomb() {
+  const icons = document.querySelectorAll('.about-section-decoration img');
+  const positions = [];
+  const spacing = window.innerWidth < 1023 ? window.innerHeight * 0.16 : window.innerWidth * 0.26; // Minimum distance in px between icons
 
-function isInNoGoZone(x, y, width, height) {
-  const centerX = x + width / 2;
-  const centerY = y + height / 2;
-  const inX = centerX > noGoXStart && centerX < noGoXEnd;
-  const inY = centerY > noGoYStart && centerY < noGoYEnd;
-  return inX && inY;
-}
+  function isTooClose(x, y) {
+    return positions.some(pos => {
+      const dx = pos.x - x;
+      const dy = pos.y - y;
+      return Math.sqrt(dx * dx + dy * dy) < spacing;
+    });
+  }
 
-function isTooClose(x, y) {
-  return positions.some(pos => {
-    const dx = pos.x - x;
-    const dy = pos.y - y;
-    return Math.sqrt(dx * dx + dy * dy) < spacing;
+  icons.forEach(icon => {
+    const iconWidth = window.innerWidth < 1023 ? window.innerHeight * 0.06 + 5 : window.innerWidth * 0.04 + 5;
+    const iconHeight = window.innerWidth < 1023 ? window.innerHeight * 0.06 + 5 : window.innerWidth * 0.04 + 5;
+    let x, y;
+    let attempts = 0;
+
+    do {
+      x = Math.random() * (window.innerWidth - iconWidth);
+      y = Math.random() * (window.innerHeight - iconHeight);
+      attempts++;
+      if (attempts > 1000) break;
+    } while (isTooClose(x, y));
+
+    positions.push({ x, y });
+    icon.style.position = 'absolute';
+    icon.style.left = `${x}px`;
+    icon.style.top = `${y}px`;
+    const rotation = (Math.random() * 60) - 30; // gives -30 to +30
+    icon.style.transform = `rotate(${rotation}deg)`;
+    icon.style.zIndex = 1;
   });
 }
-
-icons.forEach(icon => {
-  const iconWidth = window.innerWidth < 1023 ? window.innerHeight * 0.06 + 5 : window.innerWidth * 0.04 + 5;
-  const iconHeight = window.innerWidth < 1023 ? window.innerHeight * 0.06 + 5 : window.innerWidth * 0.04 + 5;
-  let x, y;
-  let attempts = 0;
-
-  do {
-    x = Math.random() * (window.innerWidth - iconWidth);
-    y = Math.random() * (window.innerHeight - iconHeight);
-    attempts++;
-    if (attempts > 1000) break;
-  } while (isInNoGoZone(x, y, iconWidth, iconHeight) || isTooClose(x, y));
-
-  positions.push({ x, y });
-  icon.style.position = 'absolute';
-  icon.style.left = `${x}px`;
-  icon.style.top = `${y}px`;
-  const rotation = (Math.random() * 60) - 30; // gives -30 to +30
-  icon.style.transform = `rotate(${rotation}deg)`;
-});

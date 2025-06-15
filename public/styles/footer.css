@@ -23,7 +23,7 @@
 
 footer {
   background-color: black;
-  padding: 4vh 8vw 1vh 8vw;
+  padding: 4vh 8vw 2vh 8vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,6 +51,12 @@ footer p, footer a {
 .footer-sections div {
   display: flex;
   flex-direction: column;
+  width: max-content;
+}
+
+.footer-note {
+  margin-bottom: 2px;
+  margin-top: 2px;
 }
 
 .footer-sections select {
@@ -70,6 +76,15 @@ footer p, footer a {
 /* Tablets (landscape) and small desktops */
 @media (min-width: 768px) {
   /* e.g., switch from stacked to grid/flex layout */
+  .footer-sections {
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+  }
+  .footer-note {
+    width: max-content;
+    align-self: center;
+  }
 }
 
 /* Medium desktops */

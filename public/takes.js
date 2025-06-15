@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for(let i = 0; i < array.length; i += size) {
           if (array.slice(i + size, i + size * 2).length < size) {
             newArray.push(array.slice(i, i + size * 2));
-            break
+            break;
           } else {
             newArray.push(array.slice(i, i + size));
           };
@@ -30,7 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       function renderTakes() {
-        splitArray(takes, 2).forEach((group, index) => {
+        const viewport = document.documentElement.clientWidth;
+        let splitSize;
+        if (viewport >= 1536) {
+          splitSize = 8;
+        } else if (viewport >= 1280) {
+          splitSize = 6;
+        } if (viewport >= 1024) {
+          splitSize = 4;
+        } else if (viewport >= 768) {
+          splitSize = 3;
+        } else {
+          splitSize = 2;
+        }
+        splitArray(takes, splitSize).forEach((group, index) => {
           const strip = document.createElement('div');
 
           if (index % 2 === 0) {
@@ -68,40 +81,50 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
 
+      function animateTakes() {
+        const stripLeft = document.querySelectorAll('.takes-left');
+        const stripRight = document.querySelectorAll('.takes-right');
+        const speed = 0.5;
+        
+        stripLeft.forEach((strip) => {
+          let position = 0;
+          function animateLeft() {
+            position -= speed;
+            if (Math.abs(position) >= strip.scrollWidth / 2) {
+              position = 0; // Reset when halfway through
+            }
+            strip.style.transform = `translateX(${position}px)`;
+            requestAnimationFrame(animateLeft);
+          }
+
+          animateLeft();
+        })
+        
+        stripRight.forEach((strip) => {
+          let position = 0;
+          strip.style.marginLeft = `-${strip.clientWidth / 2}px`;
+          function animateRight() {
+            position += speed;
+            if (Math.abs(position) >= strip.scrollWidth / 2) {
+              position = 0; // Reset when halfway through
+            }
+            strip.style.transform = `translateX(${position}px)`;
+            requestAnimationFrame(animateRight);
+          }
+
+          animateRight();
+        })
+      }
+      
       shuffle(takes);
       renderTakes();
+      animateTakes();
 
-      const stripLeft = document.querySelectorAll('.takes-left');
-      const stripRight = document.querySelectorAll('.takes-right');
-      const speed = 0.7;
-      
-      stripLeft.forEach((strip) => {
-        let position = 0;
-        function animateLeft() {
-          position -= speed;
-          if (Math.abs(position) >= strip.scrollWidth / 2) {
-            position = 0; // Reset when halfway through
-          }
-          strip.style.transform = `translateX(${position}px)`;
-          requestAnimationFrame(animateLeft);
-        }
-
-        animateLeft();
-      })
-      
-      stripRight.forEach((strip) => {
-        let position = 0;
-        function animateRight() {
-          position += speed;
-          if (Math.abs(position) >= strip.scrollWidth / 2) {
-            position = 0; // Reset when halfway through
-          }
-          strip.style.transform = `translateX(${position}px)`;
-          requestAnimationFrame(animateRight);
-        }
-
-        animateRight();
-      })
+      window.addEventListener('resize', function() {
+        takesList.innerHTML = '';
+        renderTakes();
+        animateTakes();
+      });
 
     }
   })

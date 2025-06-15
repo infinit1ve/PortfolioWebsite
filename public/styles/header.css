@@ -47,6 +47,10 @@ header a {
 /* Tablets (landscape) and small desktops */
 @media (min-width: 768px) {
   /* e.g., switch from stacked to grid/flex layout */
+  header {
+    justify-content: end;
+    padding-right: 14px;
+  }
 }
 
 /* Medium desktops */
