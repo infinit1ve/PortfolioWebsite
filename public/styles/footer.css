@@ -21,46 +21,51 @@
   }
 }
 
-.contact-section {
+footer {
+  background-color: black;
+  padding: 4vw 4vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding-left: 12vw;
-  padding-right: 12vw;
-  padding-bottom: 37.904px;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.contact-section h3 {
-  color: var(--primary);
+footer h2 {
+  color: rgb(228, 249, 251);
+  margin-bottom: 0;
 }
 
-.contact-links {
+footer p, footer a {
+  color: rgb(228, 249, 251);
+  text-decoration: none;
+}
+
+.footer-sections p, a {
+  margin-bottom: 12px;
+}
+
+.footer-sections a {
+  margin-left: 12px;
+  width: fit-content;
+}
+
+.footer-sections div {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+  flex-direction: column;
 }
 
-.contact-links img {
-  width: 48px;
+.footer-sections select {
+  background-color: black;
+  color: rgb(228, 249, 251);
+  margin-left: 4px;
+  margin-bottom: 12px;
+  border: none;
+  width: fit-content;
 }
 
-@media (prefers-color-scheme: dark) {
-  .contact-links img {
-    filter: brightness(0) saturate(100%) invert(100%) sepia(94%) saturate(0%) hue-rotate(248deg) brightness(106%) contrast(106%);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .contact-links img {
-    filter: brightness(0) saturate(100%);
-  }
-}
-
-.mailto {
-  height: 49px;
-}
 
 /* Small tablets (portrait) */
 @media (min-width: 480px) {
