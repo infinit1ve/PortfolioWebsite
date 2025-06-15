@@ -36,6 +36,7 @@ header {
 
 header a {
   color: var(--text);
+  margin: 0;
 }
 
 /* Small tablets (portrait) */
