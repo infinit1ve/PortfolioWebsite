@@ -1,0 +1,67 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: rgb(4, 25, 27);
+    --background: rgb(242, 252, 253);
+    --primary: rgb(38, 210, 223);
+    --secondary: rgb(135, 171, 237);
+    --accent: rgb(105, 216, 226);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: rgb(228, 249, 251);
+    --background: rgb(2, 12, 13);
+    --primary: rgb(32, 205, 217);
+    --secondary: rgb(18, 54, 120);
+    --accent: rgb(29, 140, 150);
+  }
+}
+
+.hero-section {
+  height: 100vh;
+  width: 76vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 12vw;
+  padding-right: 12vw;
+}
+
+.hero-section h2 {
+  margin-top: -8vh;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+
+
+.hero-section p {
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+/* Small tablets (portrait) */
+@media (min-width: 480px) {
+  /* e.g., increase font sizes, spacing */
+}
+
+/* Tablets (landscape) and small desktops */
+@media (min-width: 768px) {
+  /* e.g., switch from stacked to grid/flex layout */
+}
+
+/* Medium desktops */
+@media (min-width: 1024px) {
+  /* e.g., increase padding/margins, show sidebars */
+}
+
+/* Large desktops / wide screens */
+@media (min-width: 1280px) {
+  /* e.g., max out widths, add fine spacing adjustments */
+}
+
+/* 4K / Ultra-Wide */
+@media (min-width: 1536px) {
+  /* Optional — keep layouts from stretching too far */
+}

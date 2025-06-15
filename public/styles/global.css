@@ -1,0 +1,119 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: rgb(4, 25, 27);
+    --background: rgb(242, 252, 253);
+    --primary: rgb(38, 210, 223);
+    --secondary: rgb(135, 171, 237);
+    --accent: rgb(105, 216, 226);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: rgb(228, 249, 251);
+    --background: rgb(2, 12, 13);
+    --primary: rgb(32, 205, 217);
+    --secondary: rgb(18, 54, 120);
+    --accent: rgb(29, 140, 150);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+div {
+  overflow-y: visible;
+}
+
+body {
+  font-family: 'Roboto';
+  font-weight: 400;
+  background-color: var(--background);
+  color: var(--text);
+  padding-bottom: 1000px;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Inter';
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+select {
+  border: none;
+  border-bottom: 2px solid var(--accent);
+  background-color: var(--background);
+  padding: 2px;
+  border-radius: 0;
+  color: var(--text);
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 100%;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+.icon {
+  height: 1.333rem;
+  width: 1.333rem;
+  margin-bottom: -6px;
+  filter: brightness(0) saturate(100%) invert(78%) sepia(51%) saturate(396%) hue-rotate(134deg) brightness(93%) contrast(90%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .icon {
+    filter: brightness(0) saturate(100%) invert(39%) sepia(87%) saturate(425%) hue-rotate(137deg) brightness(97%) contrast(85%);
+  }
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
+
+/* Base styles — mobile first (default) */
+
+/* Small tablets (portrait) */
+@media (min-width: 480px) {
+  /* e.g., increase font sizes, spacing */
+}
+
+/* Tablets (landscape) and small desktops */
+@media (min-width: 768px) {
+  /* e.g., switch from stacked to grid/flex layout */
+}
+
+/* Medium desktops */
+@media (min-width: 1024px) {
+  /* e.g., increase padding/margins, show sidebars */
+}
+
+/* Large desktops / wide screens */
+@media (min-width: 1280px) {
+  /* e.g., max out widths, add fine spacing adjustments */
+}
+
+/* 4K / Ultra-Wide */
+@media (min-width: 1536px) {
+  /* Optional — keep layouts from stretching too far */
+}

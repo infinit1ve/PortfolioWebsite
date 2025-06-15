@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Light & dark mode support -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2fcfd" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#020c0d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/hero.css">
+    <link rel="stylesheet" href="../styles/about.css">
+    <link rel="stylesheet" href="../styles/recent-blogposts.css">
+    <link rel="stylesheet" href="../styles/takes.css">
+    <title>Just a Site</title>
+  </head>
+  <body>
+    <header>
+      <a href="#about-section">About me</a>
+      <a href="">Contact</a>
+      <a href="">Blog</a>
+      <a href="">Projects</a>
+    </header>
+    <div class="hero-section">
+      <h2>Hi, I&#39;m Maksym!<br>I <span id="dynamic-verb-text"></span></h2>
+      <div>
+        <p id="dynamic-welcome-text"></p>
+        <a href="#about-section">Learn more <img src="../images/icons/arrow-small-right.svg" class="icon"></a>
+      </div>
+    </div>
+    <div class="about-section" id="about-section">
+      <div class="about-section-text">
+        <h3>A bit about me</h3>
+        <div>
+          <p>Currently I am studying at a German FOS and enjoy doing things &#8212; whether that&#39;s coding, tinkering with Linux, playing games, or writing, I&#39;m up for it. I&#39;m always looking to improve through learning so I could reach my personal goals. And this webpage is an extension of that &#8212; my personal portfolio and a small portal where I share my thoughts with the world.<br>The decision to make this page a reality came spontaneously, much like many of my ideas. Realistically, I&#39;m not chasing perfection &#8212; I&#39;m chasing expirience, though I wouldn't mind doing everything flawlessly either.</p>
+          <a href="" style="cursor: not-allowed;">See my CV <img src="../images/icons/arrow-small-right.svg" class="icon"></a>
+        </div>
+      </div>
+      <div class="about-section-graphic">
+
+      </div>
+    </div>
+    <div class="about-section-decoration">
+      <img src="../images/icons/biking.svg">
+      <img src="../images/icons/computer.svg">
+      <img src="../images/icons/gamepad.svg">
+      <img src="../images/icons/globe.svg">
+      <img src="../images/icons/graduation-cap.svg">
+      <img src="../images/icons/guitar.svg">
+      <img src="../images/icons/gym.svg">
+      <img src="../images/icons/laptop.svg">
+      <img src="../images/icons/mobile-notch.svg">
+      <img src="../images/icons/restaurant.svg">
+    </div>
+    <div class="recent-blogs-section">
+      <h3>I also blog</h3>
+      <p>Take a loot at the latest published blogposts</p>
+      <div class="recent-blogpost">
+        <h5>Heading</h5>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, qui fugit! Natus aut, id nihil illum voluptas fugit odit repellat obcaecati quod dolorem quam adipisci expedita sint est quo corr... <a href="">Read more <img src="../images/icons/arrow-small-right.svg" class="icon"></a></p>
+      </div>
+      <div class="recent-blogpost">
+        <h5>Heading</h5>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, qui fugit! Natus aut, id nihil illum voluptas fugit odit repellat obcaecati quod dolorem quam adipisci expedita sint est quo corr... <a href="">Read more <img src="../images/icons/arrow-small-right.svg" class="icon"></a></p>
+      </div>
+      <div class="recent-blogpost">
+        <h5>Heading</h5>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, qui fugit! Natus aut, id nihil illum voluptas fugit odit repellat obcaecati quod dolorem quam adipisci expedita sint est quo corr... <a href="">Read more <img src="../images/icons/arrow-small-right.svg" class="icon"></a></p>
+      </div>
+      <a href="">See all articles <img src="../images/icons/arrow-small-right.svg" class="icon"></a>
+    </div>
+    <div class="takes-section">
+      <h3>A few thoughts of mine</h3>
+      <div class="takes-box"></div>
+    </div>
+    <p>Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a></p>
+    <select name="language" id="localeSelector">
+      <option value="en">English</option>
+      <option value="de">German</option>
+    </select>
+    <script src="../scripts.js"></script>
+    <script src="../takes.js"></script>
+  </body>
+</html>

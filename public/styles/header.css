@@ -1,0 +1,64 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: rgb(4, 25, 27);
+    --background: rgb(242, 252, 253);
+    --primary: rgb(38, 210, 223);
+    --secondary: rgb(135, 171, 237);
+    --accent: rgb(105, 216, 226);
+    --shadow: rgba(4, 25, 27, 0.1);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: rgb(228, 249, 251);
+    --background: rgb(2, 12, 13);
+    --primary: rgb(32, 205, 217);
+    --secondary: rgb(18, 54, 120);
+    --accent: rgb(29, 140, 150);
+    --shadow: rgba(228, 249, 251, 0.1);
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  background-color: var(--background);
+  box-shadow: 0px 0px 8px var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  z-index: 100;
+}
+
+header a {
+  color: var(--text);
+}
+
+/* Small tablets (portrait) */
+@media (min-width: 480px) {
+  /* e.g., increase font sizes, spacing */
+}
+
+/* Tablets (landscape) and small desktops */
+@media (min-width: 768px) {
+  /* e.g., switch from stacked to grid/flex layout */
+}
+
+/* Medium desktops */
+@media (min-width: 1024px) {
+  /* e.g., increase padding/margins, show sidebars */
+}
+
+/* Large desktops / wide screens */
+@media (min-width: 1280px) {
+  /* e.g., max out widths, add fine spacing adjustments */
+}
+
+/* 4K / Ultra-Wide */
+@media (min-width: 1536px) {
+  /* Optional — keep layouts from stretching too far */
+}

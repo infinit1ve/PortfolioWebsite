@@ -1,0 +1,102 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: rgb(4, 25, 27);
+    --background: rgb(242, 252, 253);
+    --primary: rgb(38, 210, 223);
+    --secondary: rgb(135, 171, 237);
+    --accent: rgb(105, 216, 226);
+    --shadow: rgba(4, 25, 27, 0.1);
+    --shadow2: rgba(135, 171, 237, 0.5);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: rgb(228, 249, 251);
+    --background: rgb(2, 12, 13);
+    --primary: rgb(32, 205, 217);
+    --secondary: rgb(18, 54, 120);
+    --accent: rgb(29, 140, 150);
+    --shadow: rgba(228, 249, 251, 0.1);
+    --shadow2: rgba(18, 54, 120, 0.5);
+  }
+}
+
+.takes-section {
+  width: 100vw;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 8vh;
+}
+
+.takes-section h3 {
+  padding-left: 12vw;
+  padding-right: 12vw;
+  color: var(--primary);
+}
+
+.takes-box {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  height: max-content;
+  overflow: hidden;
+}
+
+.takes-left, .takes-right {
+  white-space: nowrap;
+  display: flex;
+  width: max-content;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.takes-right {
+  margin-left: -50%;
+}
+
+.takes-box a {
+  color: var(--text);
+  border: 1px solid var(--text);
+  margin: 4px;
+  padding: 8px;
+  border-radius: 100px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Small tablets (portrait) */
+@media (min-width: 480px) {
+  /* e.g., increase font sizes, spacing */
+}
+
+/* Tablets (landscape) and small desktops */
+@media (min-width: 768px) {
+  /* e.g., switch from stacked to grid/flex layout */
+}
+
+/* Medium desktops */
+@media (min-width: 1024px) {
+  /* e.g., increase padding/margins, show sidebars */
+}
+
+/* Large desktops / wide screens */
+@media (min-width: 1280px) {
+  /* e.g., max out widths, add fine spacing adjustments */
+}
+
+/* 4K / Ultra-Wide */
+@media (min-width: 1536px) {
+  /* Optional — keep layouts from stretching too far */
+}
