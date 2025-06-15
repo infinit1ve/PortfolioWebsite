@@ -57,6 +57,8 @@ footer p, footer a {
 .footer-note {
   margin-bottom: 2px;
   margin-top: 2px;
+  width: max-content;
+  align-self: center;
 }
 
 .footer-sections select {
@@ -80,10 +82,6 @@ footer p, footer a {
     display: flex;
     flex-direction: row;
     gap: 10vw;
-  }
-  .footer-note {
-    width: max-content;
-    align-self: center;
   }
 }
 
