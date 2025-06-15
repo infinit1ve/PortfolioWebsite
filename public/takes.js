@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             strip.classList.add('takes-right');
           }
 
-          for (let i = 0; i < 2; i++) {
+          for (let i = 0; i < 6; i++) {
             group.forEach(take => {
               if (locale === 'de' && take.titleDE === '') {
                 return;
