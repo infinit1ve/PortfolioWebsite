@@ -39,6 +39,22 @@ header a {
   margin: 0;
 }
 
+.message {
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 50px;
+  height: max-content;
+  background-color: rgb(255, 60, 60);
+  color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-left: 8vw;
+  padding-right: 8vw;
+  text-align: center;
+}
+
 /* Small tablets (portrait) */
 @media (min-width: 480px) {
   /* e.g., increase font sizes, spacing */

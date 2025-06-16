@@ -56,9 +56,10 @@ footer p, footer a {
 
 .footer-note {
   margin-bottom: 2px;
-  margin-top: 2px;
+  margin-top: 10px;
   width: max-content;
   align-self: center;
+  text-align: center;
 }
 
 .footer-sections select {
