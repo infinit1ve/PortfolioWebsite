@@ -1,26 +1,3 @@
-@media (prefers-color-scheme: light) {
-  :root {
-    --text: rgb(4, 25, 27);
-    --background: rgb(242, 252, 253);
-    --primary: rgb(38, 210, 223);
-    --secondary: rgb(135, 171, 237);
-    --accent: rgb(105, 216, 226);
-    --shadow: rgba(4, 25, 27, 0.1);
-    --shadow2: rgba(135, 171, 237, 0.5);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: rgb(228, 249, 251);
-    --background: rgb(2, 12, 13);
-    --primary: rgb(32, 205, 217);
-    --secondary: rgb(18, 54, 120);
-    --accent: rgb(29, 140, 150);
-    --shadow: rgba(228, 249, 251, 0.1);
-    --shadow2: rgba(18, 54, 120, 0.5);
-  }
-}
-
 .takes-section {
   width: 100vw;
   height: max-content;
@@ -33,7 +10,6 @@
 .takes-section h3 {
   padding-left: 12vw;
   padding-right: 12vw;
-  color: var(--primary);
 }
 
 .takes-box {

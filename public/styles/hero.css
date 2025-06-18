@@ -1,22 +1,3 @@
-@media (prefers-color-scheme: light) {
-  :root {
-    --text: rgb(4, 25, 27);
-    --background: rgb(242, 252, 253);
-    --primary: rgb(38, 210, 223);
-    --secondary: rgb(135, 171, 237);
-    --accent: rgb(105, 216, 226);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: rgb(228, 249, 251);
-    --background: rgb(2, 12, 13);
-    --primary: rgb(32, 205, 217);
-    --secondary: rgb(18, 54, 120);
-    --accent: rgb(29, 140, 150);
-  }
-}
-
 .hero-section {
   height: 100vh;
   width: 76vw;
@@ -31,10 +12,7 @@
 .hero-section h2 {
   margin-top: -8vh;
   margin-bottom: 8px;
-  color: var(--primary);
 }
-
-
 
 .hero-section p {
   color: var(--text);

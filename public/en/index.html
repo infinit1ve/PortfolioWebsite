@@ -5,9 +5,6 @@
     <!-- Light & dark mode support -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2fcfd" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#020c0d" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/header.css">
@@ -17,14 +14,18 @@
     <link rel="stylesheet" href="../styles/takes.css">
     <link rel="stylesheet" href="../styles/contact.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/satoshi.css">
     <title>Just a Site</title>
   </head>
   <body>
     <header>
-      <a href="#about-section">About me</a>
-      <a href="#contact-section" onclick="event.preventDefault(); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth', block: 'center'}); return false;">Contact</a>
-      <a href="">Blog</a>
-      <a href="">Projects</a>
+      <a href="../index.html"><img id="logo" src="../images/icons/infinitive/GlyphBlack.svg"></a>
+      <div>
+        <a href="#about-section">About me</a>
+        <a href="#contact-section" onclick="event.preventDefault(); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth', block: 'center'}); return false;">Contact</a>
+        <a href="">Blog</a>
+        <a href="">Projects</a>
+      </div>
     </header>
     <div class="message">
       <p>The website is currently under construction, expect changes, broken links, and placeholder content</p>
@@ -90,7 +91,7 @@
       </div>
     </div>
     <footer>
-      <a href="https://infinitive.cc"><h2>infinitive.cc</h2></a>
+      <a href="https://infinitive.cc"><img class="mainlogo" src="../images/icons/infinitive/FullDomainWhite.svg"></a>
       <div class="footer-sections">
         <div>
           <p><b>Links</b></p>
@@ -108,7 +109,7 @@
           </select>
         </div>
       </div>
-      <p class="footer-note">Last updated on the 16th of June 2025<br>&#169; 2025 - Built by Maksym with &#10084;&#65039;</p>
+      <p class="footer-note">Last updated on the 18th of June 2025<br>&#169; 2025 - Built by Maksym with &#10084;&#65039;</p>
     </footer>
     <script src="../scripts.js"></script>
     <script src="../takes.js"></script>

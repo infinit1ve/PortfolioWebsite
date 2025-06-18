@@ -1,26 +1,3 @@
-@media (prefers-color-scheme: light) {
-  :root {
-    --text: rgb(4, 25, 27);
-    --background: rgb(242, 252, 253);
-    --primary: rgb(38, 210, 223);
-    --secondary: rgb(135, 171, 237);
-    --accent: rgb(105, 216, 226);
-    --shadow: rgba(4, 25, 27, 0.1);
-    --shadow2: rgba(135, 171, 237, 0.5);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: rgb(228, 249, 251);
-    --background: rgb(2, 12, 13);
-    --primary: rgb(32, 205, 217);
-    --secondary: rgb(18, 54, 120);
-    --accent: rgb(29, 140, 150);
-    --shadow: rgba(228, 249, 251, 0.1);
-    --shadow2: rgba(18, 54, 120, 0.5);
-  }
-}
-
 .recent-blogs-section {
   width: 76vw;
   display: flex;
@@ -30,10 +7,6 @@
   padding-right: 12vh;
   z-index: -2;
   padding-bottom: 8vh;
-}
-
-.recent-blogs-section h3 {
-  color: var(--primary);
 }
 
 .recent-blogpost {
@@ -49,7 +22,6 @@
   margin-top: -6px;
   margin-bottom: 20px;
   transition: all 0.5s;
-  box-shadow: 5px 5px 20px var(--shadow2);
 }
 
 .recent-blogpost h5 {

@@ -1,22 +1,3 @@
-@media (prefers-color-scheme: light) {
-  :root {
-    --text: rgb(4, 25, 27);
-    --background: rgb(242, 252, 253);
-    --primary: rgb(38, 210, 223);
-    --secondary: rgb(135, 171, 237);
-    --accent: rgb(105, 216, 226);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: rgb(228, 249, 251);
-    --background: rgb(2, 12, 13);
-    --primary: rgb(32, 205, 217);
-    --secondary: rgb(18, 54, 120);
-    --accent: rgb(29, 140, 150);
-  }
-}
-
 .about-section {
   width: 76vw;
   height: calc(100vh - 50px);
@@ -35,7 +16,6 @@
 }
 
 .about-section-text h3 {
-  color: var(--primary);
   z-index: 2;
 }
 
@@ -58,12 +38,12 @@
   position: absolute;
   height: 6vh;
   opacity: 0.2;
-  filter: brightness(0) saturate(100%) invert(78%) sepia(46%) saturate(3152%) hue-rotate(187deg) brightness(98%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(80%) sepia(7%) saturate(1272%) hue-rotate(209deg) brightness(99%) contrast(98%);
 }
 
 @media (prefers-color-scheme: dark) {
   .about-section-decoration img {
-    filter: brightness(0) saturate(100%) invert(44%) sepia(14%) saturate(2226%) hue-rotate(137deg) brightness(99%) contrast(87%);
+    filter: brightness(0) saturate(100%) invert(75%) sepia(11%) saturate(1115%) hue-rotate(216deg) brightness(102%) contrast(95%);
   }
 }
 

@@ -13,7 +13,6 @@ if(locale === "de") {
   var welcomeText = ["You&#39;re here now &#8212; might as well see what&#39;s going on.", "Glad you wandered in. Stay a while, explore a bit.", "Well, now that you&#39;re here, take a look around.", "If you&#39;re here for a reason, I hope you find it."];
 }
 
-
 let currentWordList = shuffle([...words]);
 let wordIndex = 0;
 let charIndex = 0;
@@ -53,7 +52,17 @@ function type() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", type);
+document.addEventListener("DOMContentLoaded", function() {
+  type();
+  const viewport = document.documentElement.clientWidth;
+  const logo = document.getElementById('logo');
+  if (viewport >= 768) {
+    logo.src = '../images/icons/infinitive/FullTextBlack.svg';
+  } else {
+    logo.src = '../images/icons/infinitive/GlyphBlack.svg';
+  }
+});
+
 
 const textWelcomeElement = document.getElementById("dynamic-welcome-text");
 
@@ -73,6 +82,13 @@ iconBomb();
 
 window.addEventListener('resize', function() {
   iconBomb();
+  const viewport = document.documentElement.clientWidth;
+  const logo = document.getElementById('logo');
+  if (viewport >= 768) {
+    logo.src = '../images/icons/infinitive/FullTextBlack.svg';
+  } else {
+    logo.src = '../images/icons/infinitive/GlyphBlack.svg';
+  }
 });
 
 function iconBomb() {

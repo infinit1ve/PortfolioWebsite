@@ -1,20 +1,37 @@
 @media (prefers-color-scheme: light) {
   :root {
-    --text: rgb(4, 25, 27);
-    --background: rgb(242, 252, 253);
-    --primary: rgb(38, 210, 223);
-    --secondary: rgb(135, 171, 237);
-    --accent: rgb(105, 216, 226);
+    --text: rgb(7, 4, 4);
+    --background: rgb(252, 252, 252);
+    --primary: rgb(76, 46, 198);
+    --secondary: rgb(206, 197, 250);
+    --shadow: rgba(76, 46, 198, 0.1);
+    --brand-icon: rgb(0, 0, 0);
+  }
+  .icon {
+    filter: brightness(0) saturate(100%) invert(80%) sepia(7%) saturate(1272%) hue-rotate(209deg) brightness(99%) contrast(98%);
   }
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: rgb(228, 249, 251);
-    --background: rgb(2, 12, 13);
-    --primary: rgb(32, 205, 217);
-    --secondary: rgb(18, 54, 120);
-    --accent: rgb(29, 140, 150);
+    --text: rgb(251, 249, 249);
+    --background: rgb(4, 4 ,4);
+    --primary: rgb(142, 43, 218);
+    --secondary: rgb(209, 186, 249);
+    --shadow: rgba(142, 43, 218, 0.1);
+    --brand-icon: rgb(255, 255, 255);
   }
+  .icon {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(11%) saturate(1115%) hue-rotate(216deg) brightness(102%) contrast(95%);
+  }
+}
+
+@font-face {
+  font-family: 'Roboto'; /* a name you choose */
+  src: url('../fonts/Roboto-Variable.ttf') format('truetype'),
+       url('../fonts/Roboto-VariableItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
@@ -30,7 +47,7 @@ div {
 }
 
 body {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   background-color: var(--background);
   color: var(--text);
@@ -38,18 +55,19 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Inter';
+  font-family: 'Satoshi-Black', sans-serif;
   font-weight: 700;
+  color: var(--primary);
 }
 
 a {
   text-decoration: none;
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 select {
   border: none;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--secondary);
   background-color: var(--background);
   padding: 2px;
   border-radius: 0;
@@ -67,13 +85,6 @@ select:hover {
   height: 1.333rem;
   width: 1.333rem;
   margin-bottom: -6px;
-  filter: brightness(0) saturate(100%) invert(78%) sepia(51%) saturate(396%) hue-rotate(134deg) brightness(93%) contrast(90%);
-}
-
-@media (prefers-color-scheme: dark) {
-  .icon {
-    filter: brightness(0) saturate(100%) invert(39%) sepia(87%) saturate(425%) hue-rotate(137deg) brightness(97%) contrast(85%);
-  }
 }
 
 html {font-size: 100%;} /* 16px */

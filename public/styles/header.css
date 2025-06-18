@@ -1,49 +1,51 @@
-@media (prefers-color-scheme: light) {
-  :root {
-    --text: rgb(4, 25, 27);
-    --background: rgb(242, 252, 253);
-    --primary: rgb(38, 210, 223);
-    --secondary: rgb(135, 171, 237);
-    --accent: rgb(105, 216, 226);
-    --shadow: rgba(4, 25, 27, 0.1);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: rgb(228, 249, 251);
-    --background: rgb(2, 12, 13);
-    --primary: rgb(32, 205, 217);
-    --secondary: rgb(18, 54, 120);
-    --accent: rgb(29, 140, 150);
-    --shadow: rgba(228, 249, 251, 0.1);
-  }
-}
-
 header {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  height: 50px;
+  height: 70px;
   background-color: var(--background);
   box-shadow: 0px 0px 8px var(--shadow);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  justify-content: space-between;
   z-index: 100;
+  padding-left: 10px;
+  padding-right: 22px;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+header div a {
+  height: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  header img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(44deg) brightness(106%) contrast(103%);
+  }
+}
+
+header img {
+  height: 50px;
 }
 
 header a {
   color: var(--text);
   margin: 0;
+  height: max-content;
 }
 
 .message {
   position: sticky;
   left: 0;
   right: 0;
-  top: 50px;
+  top: 70px;
   height: max-content;
   background-color: rgb(255, 60, 60);
   color: var(--background);
@@ -63,10 +65,6 @@ header a {
 /* Tablets (landscape) and small desktops */
 @media (min-width: 768px) {
   /* e.g., switch from stacked to grid/flex layout */
-  header {
-    justify-content: end;
-    padding-right: 14px;
-  }
 }
 
 /* Medium desktops */
