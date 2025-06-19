@@ -2,8 +2,7 @@ const localeSelector = document.getElementById("localeSelector");
 const locale = localeSelector.value;
 
 localeSelector.addEventListener('change', function() {
-    const relativePath = window.location.pathname;
-    window.location.href = `/${this.value}/${relativePath.slice(4)}`;
+    window.location.href = `/${this.value}/`;
 });
 
 if(locale === "de") {
