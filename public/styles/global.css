@@ -4,6 +4,7 @@
     --background: rgb(252, 252, 252);
     --primary: rgb(76, 46, 198);
     --secondary: rgb(206, 197, 250);
+    --accent: ;
     --shadow: rgba(76, 46, 198, 0.1);
     --brand-icon: rgb(0, 0, 0);
   }
@@ -18,6 +19,7 @@
     --background: rgb(4, 4 ,4);
     --primary: rgb(142, 43, 218);
     --secondary: rgb(209, 186, 249);
+    --accent: ;
     --shadow: rgba(142, 43, 218, 0.1);
     --brand-icon: rgb(255, 255, 255);
   }

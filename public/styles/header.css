@@ -42,12 +42,12 @@ header a {
 }
 
 .message {
-  position: sticky;
+  position: absolute;
   left: 0;
   right: 0;
   top: 70px;
   height: max-content;
-  background-color: rgb(255, 60, 60);
+  background-color: var(--secondary);
   color: var(--background);
   display: flex;
   justify-content: center;
@@ -55,6 +55,8 @@ header a {
   padding-left: 8vw;
   padding-right: 8vw;
   text-align: center;
+  z-index: 99;
+  box-shadow: 0 0 10px var(--secondary);
 }
 
 /* Small tablets (portrait) */

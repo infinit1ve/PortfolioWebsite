@@ -2,7 +2,8 @@ const localeSelector = document.getElementById("localeSelector");
 const locale = localeSelector.value;
 
 localeSelector.addEventListener('change', function() {
-    window.location.href = `/${this.value}/index.html`;
+    const relativePath = window.location.pathname;
+    window.location.href = `/${this.value}/${relativePath.slice(4)}`;
 });
 
 if(locale === "de") {
@@ -80,14 +81,20 @@ textWelcomeElement.innerHTML = textWelcomeElementShuffled[0];
 
 iconBomb();
 
+let lastWidth = window.innerWidth;
+
 window.addEventListener('resize', function() {
-  iconBomb();
-  const viewport = document.documentElement.clientWidth;
-  const logo = document.getElementById('logo');
-  if (viewport >= 768) {
-    logo.src = '../images/icons/infinitive/FullTextBlack.svg';
-  } else {
-    logo.src = '../images/icons/infinitive/GlyphBlack.svg';
+  const currentWidth = window.innerWidth;
+  if (currentWidth !== lastWidth) {
+    iconBomb();
+    const viewport = document.documentElement.clientWidth;
+    const logo = document.getElementById('logo');
+    if (viewport >= 768) {
+      logo.src = '../images/icons/infinitive/FullTextBlack.svg';
+    } else {
+      logo.src = '../images/icons/infinitive/GlyphBlack.svg';
+    }
+    lastWidth = currentWidth;
   }
 });
 
@@ -105,14 +112,15 @@ function iconBomb() {
   }
 
   icons.forEach(icon => {
+    const boundingBox = document.getElementById('about-section-decoration');
     const iconWidth = window.innerWidth < 1023 ? window.innerHeight * 0.06 + 5 : window.innerWidth * 0.04 + 5;
     const iconHeight = window.innerWidth < 1023 ? window.innerHeight * 0.06 + 5 : window.innerWidth * 0.04 + 5;
     let x, y;
     let attempts = 0;
 
     do {
-      x = Math.random() * (window.innerWidth - iconWidth);
-      y = Math.random() * (window.innerHeight - iconHeight);
+      x = Math.random() * (boundingBox.clientWidth - iconWidth);
+      y = Math.random() * (boundingBox.clientHeight - iconHeight);
       attempts++;
       if (attempts > 1000) break;
     } while (isTooClose(x, y));
