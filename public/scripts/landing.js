@@ -1,9 +1,11 @@
-const localeSelector = document.getElementById("localeSelector");
-const locale = localeSelector.value;
-
-localeSelector.addEventListener('change', function() {
-    window.location.href = `/${this.value}/`;
-});
+function shuffle(array) {
+  // Fisher-Yates shuffle
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
 if(locale === "de") {
   var words = ["tue Dinge.", "lerne.", "chille.", "schreibe.", "bastle.", "koche."];
@@ -13,20 +15,11 @@ if(locale === "de") {
   var welcomeText = ["You&#39;re here now &#8212; might as well see what&#39;s going on.", "Glad you wandered in. Stay a while, explore a bit.", "Well, now that you&#39;re here, take a look around.", "If you&#39;re here for a reason, I hope you find it."];
 }
 
-let currentWordList = shuffle([...words]);
+let currentWordList = shuffle(words);
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 const textElement = document.getElementById("dynamic-verb-text");
-
-function shuffle(array) {
-  // Fisher-Yates shuffle
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
 
 function type() {
   const currentWord = currentWordList[wordIndex];
@@ -44,7 +37,7 @@ function type() {
     if (!isDeleting) {
       wordIndex++;
       if (wordIndex >= currentWordList.length) {
-        currentWordList = shuffle([...words]); // reshuffle to keep things fresh
+        currentWordList = shuffle(words); // reshuffle to keep things fresh
         wordIndex = 0;
       }
     }
@@ -52,50 +45,14 @@ function type() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  type();
-  const viewport = document.documentElement.clientWidth;
-  const logo = document.getElementById('logo');
-  if (viewport >= 768) {
-    logo.src = '../images/icons/infinitive/FullTextBlack.svg';
-  } else {
-    logo.src = '../images/icons/infinitive/GlyphBlack.svg';
-  }
-});
-
+document.addEventListener("DOMContentLoaded", type())
 
 const textWelcomeElement = document.getElementById("dynamic-welcome-text");
-
-function shuffle(array) {
-  // Fisher-Yates shuffle
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
 
 const textWelcomeElementShuffled = shuffle(welcomeText);
 textWelcomeElement.innerHTML = textWelcomeElementShuffled[0];
 
 iconBomb();
-
-let lastWidth = window.innerWidth;
-
-window.addEventListener('resize', function() {
-  const currentWidth = window.innerWidth;
-  if (currentWidth !== lastWidth) {
-    iconBomb();
-    const viewport = document.documentElement.clientWidth;
-    const logo = document.getElementById('logo');
-    if (viewport >= 768) {
-      logo.src = '../images/icons/infinitive/FullTextBlack.svg';
-    } else {
-      logo.src = '../images/icons/infinitive/GlyphBlack.svg';
-    }
-    lastWidth = currentWidth;
-  }
-});
 
 function iconBomb() {
   const icons = document.querySelectorAll('.about-section-decoration img');

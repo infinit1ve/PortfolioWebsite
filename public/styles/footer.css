@@ -1,4 +1,4 @@
-footer {
+.footer {
   background-color: black;
   padding: 4vh 8vw 2vh 8vw;
   display: flex;
@@ -10,7 +10,7 @@ footer {
   width: 300px;
 }
 
-footer p, footer a {
+.footer p, .footer a {
   color: rgb(251, 249, 249);
   text-decoration: none;
 }

@@ -1,0 +1,107 @@
+main {
+  padding: 4vh 8vw;
+  margin-top: 70px;
+  width: fit-content(84vw);
+}
+
+.message {
+  position: sticky;
+}
+
+article h1 {font-size: 2.369rem; /* 37.92px */}
+
+article h2 {font-size: 1.777rem; /* 28.48px */}
+
+article h3 {font-size: 1.333rem; /* 21.28px */}
+
+article header h1 {
+  margin-bottom: 12px;
+}
+
+article header p {
+  color: gray;
+}
+
+article header a {
+  color: gray;
+  text-decoration: underline;
+}
+
+article figure {
+  width: 84vw;
+  margin: 0;
+}
+
+article figure img {
+  width: 84vw;
+  border-radius: 6px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+article figure figcaption {
+  font-size: 80%;
+  color: gray;
+}
+
+article p {
+  line-height: 1.5;
+}
+
+article ul {
+  padding-left: 6vw;
+  line-height: 1.5;
+}
+
+li::marker {
+  color: var(--secondary);
+}
+
+article blockquote {
+  border-left: solid 4px var(--secondary);
+  margin: 0;
+  line-height: 1.5;
+  padding-left: 4vw;
+}
+
+/* Small tablets (portrait) */
+@media (min-width: 480px) {
+  /* e.g., increase font sizes, spacing */
+}
+
+/* Tablets (landscape) and small desktops */
+@media (min-width: 768px) {
+  /* e.g., switch from stacked to grid/flex layout */
+}
+
+@media (min-width: 896px) {
+  /* e.g., switch from stacked to grid/flex layout */
+  article figure img {
+    max-height: 30vh;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
+/* Medium desktops */
+@media (min-width: 1024px) {
+  /* e.g., increase padding/margins, show sidebars */
+  article ul {
+    padding-left: 2vw;
+    line-height: 1.5;
+  }
+
+  article blockquote {
+    padding-left: 1vw;
+  }
+}
+
+/* Large desktops / wide screens */
+@media (min-width: 1280px) {
+  /* e.g., max out widths, add fine spacing adjustments */
+}
+
+/* 4K / Ultra-Wide */
+@media (min-width: 1536px) {
+  /* Optional — keep layouts from stretching too far */
+}
