@@ -81,11 +81,7 @@ article blockquote {
     aspect-ratio: 16 / 9;
     object-fit: cover;
   }
-}
 
-/* Medium desktops */
-@media (min-width: 1024px) {
-  /* e.g., increase padding/margins, show sidebars */
   article ul {
     padding-left: 2vw;
     line-height: 1.5;
@@ -94,6 +90,11 @@ article blockquote {
   article blockquote {
     padding-left: 1vw;
   }
+}
+
+/* Medium desktops */
+@media (min-width: 1024px) {
+  /* e.g., increase padding/margins, show sidebars */
 }
 
 /* Large desktops / wide screens */
