@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node run postinstall && eleventy",
+    "build": "npm run postinstall && eleventy",
     "postinstall": "chmod +x ./node_modules/.bin/eleventy",
-    "start": "node run build && node server.js"
+    "start": "npm run build && node server.js"
   },
   "keywords": [],
   "author": "",
