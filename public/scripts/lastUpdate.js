@@ -2,7 +2,7 @@ const dateText = document.getElementById('date-text');
 const copyrightYearText = document.getElementById('copyright-year');
 
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('../api/lastUpdate')
+  fetch('/api/lastUpdate')
   .then(response => response.json())  // parse JSON from the response
   .then(lastPush => {
     const DateTime = luxon.DateTime;

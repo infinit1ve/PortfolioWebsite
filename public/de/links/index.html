@@ -7,9 +7,9 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#020c0d" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../../styles/header.css">
     <link rel="stylesheet" href="../../styles/footer.css">
     <link rel="stylesheet" href="../../styles/satoshi.css">
+    <link rel="stylesheet" href="./links.css">
     <link rel="icon" href="../../images/icons/infinitive/GlyphBlack.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
     <link rel="icon" href="../../images/icons/infinitive/GlyphWhite.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
     <link rel="icon" href="../../images/icons/infinitive/GlyphBlack.ico" type="image/x-icon" media="(prefers-color-scheme: light)">
@@ -17,16 +17,8 @@
     <title>Blog - infinitive</title>
   </head>
   <body>
-    <header class="header">
-      <a href="https://infinitive.cc"><img id="logo" src="../../images/icons/infinitive/GlyphBlack.svg"></a>
-      <div>
-        <a href="../index.html#about-section">About me</a>
-        <a href="../index.html#contact-section">Contact</a>
-        <a href="./">Blog</a>
-        <a href="">Projects</a>
-      </div>
-    </header>
-    <div class="message" id="message">
+    <div class="links-section">
+
     </div>
     <footer class="footer">
       <a href="https://infinitive.cc"><img class="mainlogo" src="../../images/icons/infinitive/FullDomainWhite.svg"></a>
@@ -34,25 +26,23 @@
         <div>
           <p><b>Links</b></p>
           <a href="mailto:contact@infinitive.cc">Email</a>
-          <a href="./">Blog</a>
+          <a href="../blog/">Blog</a>
           <a href="https://github.com/infinit1ve">GitHub</a>
-          <a href="https://discord.com/users/480303566653882370">Discord Profile</a>
+          <a href="https://discord.com/users/480303566653882370">Discord Profil</a>
         </div>
         <div>
-          <p><b>Other</b></p>
-          <a href="https://www.flaticon.com/uicons">Uicons by Flaticon</a>
+          <p><b>Andere</b></p>
+          <a href="https://www.flaticon.com/uicons">Uicons von Flaticon</a>
           <select name="language" id="localeSelector">
-            <option value="en" selected>&#x1f1ec;&#x1f1e7; English</option>
-            <option value="de" disabled>&#x1f1e9;&#x1f1ea; Deutsch</option>
+            <option value="en">&#x1f1ec;&#x1f1e7; English</option>
+            <option value="de" selected>&#x1f1e9;&#x1f1ea; Deutsch</option>
           </select>
         </div>
       </div>
-      <p class="footer-note">Last updated on <span id="date-text"></span><br>&#169; <span id="copyright-year">2025</span> - Built by Maksym with <a href="../secret/">&#10084;&#65039;</a></p>
+      <p class="footer-note">Zuletzt aktualisiert am <span id="date-text"></span><br>&#169; <span id="copyright-year">2025</span> - Entwickelt von Maksym mit <a href="../secret/">&#10084;&#65039;</a></p>
     </footer>
+    <script src="../../scripts/locale.js"></script>
     <script src="../../scripts/lastUpdate.js"></script>
     <script src="../../scripts/luxon.js"></script>
-    <script src="../../scripts/resize.js"></script>
-    <script src="../../scripts/locale.js"></script>
-    <script src="../../scripts/query.js"></script>
   </body>
 </html>
