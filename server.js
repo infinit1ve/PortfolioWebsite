@@ -33,3 +33,23 @@ app.get('/api/takes', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch data' });
   }
 });
+
+const { Octokit } = require('@octokit/core');
+const octokit = new Octokit({auth: process.env.GITHUB_KEY});
+const { DateTime } = require("luxon");
+
+app.get('/api/lastUpdate', async (req, res) => {
+  try {
+    const data = await octokit.request('GET /repos/infinit1ve/PortfolioWebsite', {
+      owner: 'infinit1ve',
+      repo: 'PortfolioWebsite',
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    });
+    const lastPush = DateTime.fromISO(data.data.pushed_at);
+    res.json(lastPush);
+  } catch (error) {
+    console.error('Error fetching GitHub data:', error);
+  }
+});
