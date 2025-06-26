@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Redirecting... - infinitive.cc</title>
   <script>
-    const userLanguage = navigator.language || navigator.userLanguage;
-    if(userLanguage.slice(0, 2) !== "en" && userLanguage.slice(0, 2) !== "de") {
-      window.location.href = `/en/${window.location.hash}${window.location.search};`;
-    } else {
-      window.location.href = `/${userLanguage.slice(0, 2)}/${window.location.hash}${window.location.search}`;
+    function langRedirect() {
+      const userLanguage = navigator.language || navigator.userLanguage;
+      if(userLanguage.slice(0, 2) !== "en" && userLanguage.slice(0, 2) !== "de") {
+        window.location.href = `/en/${window.location.hash}${window.location.search};`;
+      } else {
+        window.location.href = `/${userLanguage.slice(0, 2)}/${window.location.hash}${window.location.search}`;
+      };
     };
+    langRedirect();
   </script>
   <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/redirect.css">
 </head>
-<body>
-
-</body>
+  <body>
+    <h3>You are getting redirected...</h3>
+    <p>If the automatic redirection doesn't work, <a onclick="langRedirect();">click here</a></p>
+  </body>
 </html>
