@@ -1,3 +1,4 @@
 {
-  "type": "blogpost"
+  "type": "blogpost",
+  "layout": "/src/article/_includes/template.njk"
 }

@@ -9,7 +9,6 @@ lead: Every morning millions of people blindly consume their sacred cup of coffe
 disclaimer: A purely satirical and joke article about the great coffee conspiracy
 author: ChatGPT
 author_link: https://chatgpt.com
-layout: template.njk
 ---
 
 <img src="https://images.unsplash.com/photo-1542372147193-a7aca54189cd" alt="A suspiciously staring coffee cup">
