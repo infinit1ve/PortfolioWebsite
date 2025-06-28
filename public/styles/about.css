@@ -1,6 +1,6 @@
 .about-section {
   width: 76vw;
-  height: calc(100vh - 50px);
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,7 @@
   z-index: 0;
   position: relative;
   width: 100vw;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 30px);
   margin-top: -90vh;
   overflow: hidden;
 }

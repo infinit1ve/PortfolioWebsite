@@ -8,7 +8,7 @@ function shuffle(array) {
 }
 
 if(locale === "de") {
-  var words = ["tue Dinge.", "lerne.", "chille.", "bastle.", "koche.", "programmiere."];
+  var words = ["tue Dinge.", "lerne.", "chille.", "bastle.", "koche.", "code."];
   var welcomeText = ["Jetzt bist du schon mal hier &#8212; dann schau dich ruhig um.", "Schön, dass du hergefunden hast. Bleib doch ein bisschen und schau dich um.", "Na gut, jetzt wo du schon mal da bist &#8212; schau dich einfach um.", "Wenn du aus einem bestimmten Grund hier bist &#8212; ich hoffe, du findest, was du suchst."];
 } else {
   var words = ["do stuff.", "learn.", "vibe.", "tinker.", "cook.", "code."];

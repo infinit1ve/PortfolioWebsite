@@ -42,10 +42,6 @@
 }
 
 .message {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 70px;
   height: max-content;
   background-color: var(--secondary);
   color: var(--background);

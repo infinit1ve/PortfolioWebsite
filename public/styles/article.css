@@ -4,10 +4,6 @@ main {
   width: fit-content(84vw);
 }
 
-.message {
-  position: sticky;
-}
-
 article h1 {font-size: 2.369rem; /* 37.92px */}
 
 article h2 {font-size: 1.777rem; /* 28.48px */}

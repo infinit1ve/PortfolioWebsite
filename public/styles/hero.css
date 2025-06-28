@@ -9,6 +9,10 @@
   padding-right: 12vw;
 }
 
+.message {
+  position: absolute;
+}
+
 .hero-section h2 {
   margin-top: -8vh;
   margin-bottom: 8px;
