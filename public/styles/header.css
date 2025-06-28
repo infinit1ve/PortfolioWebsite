@@ -43,13 +43,12 @@
 
 .message {
   height: max-content;
+  width: 100vw;
   background-color: var(--secondary);
   color: var(--background);
   display: flex;
   justify-content: center;
   align-content: center;
-  padding-left: 8vw;
-  padding-right: 8vw;
   text-align: center;
   z-index: 99;
   box-shadow: 0 0 10px var(--secondary);
