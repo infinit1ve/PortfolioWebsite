@@ -53,3 +53,25 @@ app.get('/api/lastUpdate', async (req, res) => {
     console.error('Error fetching GitHub data:', error);
   }
 });
+
+const postgress = require('postgres');
+const sql = postgress(process.env.SQL_KEY);
+
+app.get('/api/syncDB', async (req, res) => {
+  try {
+    const articles = await sql`SELECT * FROM article`;
+    articles.forEach(element => {
+      var showdown  = require('showdown'),
+      converter = new showdown.Converter(),
+      convertedLead = converter.makeHtml(element.lead);
+      convertedTitle = converter.makeHtml(element.title);
+      convertedContent = converter.makeHtml(element.content);
+      element.lead = convertedLead;
+      element.title = convertedTitle;
+      element.content = convertedContent;
+    });
+    res.json(articles);
+  } catch (error) {
+    console.error('Error fetching articles data:', error);
+  }
+});
