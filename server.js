@@ -89,8 +89,9 @@ app.get('/en/blog/:slug', async (req, res) => {
     var showdown  = require('showdown'),
       converter = new showdown.Converter()
     const date = DateTime.fromJSDate(article.date).toFormat('dd.LL.yyyy');
+    const computerDate = DateTime.fromJSDate(article.date).toFormat('yyyy-LL-dd');
     const convertedContent = converter.makeHtml(article.content);
-    res.render('index', { title: `${article.title}`, date: `${date}`, content: `${convertedContent}` });
+    res.render('index', { title: `${article.title}`, date: `${date}`, computerDate: `${computerDate}`, content: `${convertedContent}` });
   } catch (err) {
     res.redirect('/en/blog');
   }

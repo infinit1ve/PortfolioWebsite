@@ -29,9 +29,7 @@ main
     header
       h1= title
       p
-        time(datetime='2025-06-20')= date
-        |  &bull; 
-        a(itemprop='author' href='https://chatgpt.com') author
+        time(datetime=computerDate)= date
     block!= content
 footer.footer
   a(href='https://infinitive.cc')
