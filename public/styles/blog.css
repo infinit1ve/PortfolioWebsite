@@ -13,6 +13,24 @@
 }
 
 .blogpost {
-  box-shadow: 0px 0px 10px var(--shadow);
-  box-shadow: 0px 0px 20px var(--shadow);
+  margin: 12px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.blogpost-date {
+  font-size: 76%;
+  color: gray;
+  margin-top: 0;
+}
+
+.recent-blogpost h5 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.blogpost h5 {
+  margin-bottom: 0;
 }

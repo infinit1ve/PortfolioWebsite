@@ -58,19 +58,15 @@ const postgress = require('postgres');
 const { title } = require('process');
 const sql = postgress(process.env.SQL_KEY);
 
-app.get('/api/syncDB', async (req, res) => {
+app.get('/api/latestArticles', async (req, res) => {
   try {
-    const articles = await sql`SELECT * FROM article`;
+    const articles = await sql`SELECT * FROM article ORDER BY date DESC LIMIT 3`;
     articles.forEach(element => {
       var showdown  = require('showdown'),
       converter = new showdown.Converter()
       const convertedLead = converter.makeHtml(element.lead);
-      const convertedTitle = converter.makeHtml(element.title);
-      const convertedContent = converter.makeHtml(element.content);
       const convertedDate = DateTime.fromJSDate(element.date).toFormat('dd.LL.yyyy')
       element.lead = convertedLead;
-      element.title = convertedTitle;
-      element.content = convertedContent;
       element.date = convertedDate
     });
     res.json(articles);
@@ -94,5 +90,22 @@ app.get('/en/blog/:slug', async (req, res) => {
     res.render('index', { title: `${article.title}`, date: `${date}`, computerDate: `${computerDate}`, content: `${convertedContent}` });
   } catch (err) {
     res.redirect('/en/blog');
+  }
+});
+
+app.get('/api/getArticles', async (req, res) => {
+  try {
+    const articles = await sql`SELECT * FROM article ORDER BY date DESC`;
+    articles.forEach(element => {
+      var showdown  = require('showdown'),
+      converter = new showdown.Converter()
+      const convertedLead = converter.makeHtml(element.lead.slice(0, 52) + '...');
+      const convertedDate = DateTime.fromJSDate(element.date).toFormat('dd.LL.yyyy')
+      element.lead = convertedLead;
+      element.date = convertedDate
+    });
+    res.json(articles);
+  } catch (error) {
+    console.error('Error fetching articles data:', error);
   }
 });
