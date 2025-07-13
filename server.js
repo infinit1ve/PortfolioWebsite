@@ -88,7 +88,7 @@ app.get('/en/blog/:slug', async (req, res) => {
     const computerDate = DateTime.fromJSDate(article.date).toFormat('yyyy-LL-dd');
     const convertedContent = converter.makeHtml(article.content);
     res.render('index', { title: `${article.title}`, date: `${date}`, computerDate: `${computerDate}`, content: `${convertedContent}` });
-  } catch (err) {
+  } catch (error) {
     res.redirect('/en/blog');
   }
 });
@@ -107,5 +107,25 @@ app.get('/api/getArticles', async (req, res) => {
     res.json(articles);
   } catch (error) {
     console.error('Error fetching articles data:', error);
+  }
+});
+
+app.get('/api/searchBlog/', async (req, res) => {
+  try {
+    const query = decodeURIComponent(req.query.query);
+    const results = await sql`SELECT * FROM article WHERE title ILIKE ${"%" + query + "%"} OR content ILIKE ${"%" + query + "%"} OR lead ILIKE ${"%" + query + "%"} ORDER BY date DESC LIMIT 10`;
+    if (results != []) {
+      results.forEach(element => {
+        var showdown  = require('showdown'),
+        converter = new showdown.Converter()
+        const convertedLead = converter.makeHtml(element.lead);
+        const convertedDate = DateTime.fromJSDate(element.date).toFormat('dd.LL.yyyy')
+        element.lead = convertedLead;
+        element.date = convertedDate
+      });
+      res.json(results);
+    }
+  } catch (error) {
+    console.error('Error searching articles:', error);
   }
 });

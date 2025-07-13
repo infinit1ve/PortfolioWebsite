@@ -3,7 +3,7 @@ const searchField = document.getElementById('search-input');
 function searchBlog() {
   const query = searchField.value;
   if (query) {
-    window.location.href = `/en/blog/search?query=${query}`;
+    window.location.href = `/en/blog/search?query=${encodeURIComponent(query)}`;
   }
 };
 
@@ -12,8 +12,3 @@ searchField.addEventListener("keydown", function (event) {
     searchBlog();
   }
 });
-
-// SELECT * FROM articles
-// WHERE title ILIKE '%coffee%'
-// OR content ILIKE '%coffee%'
-// LIMIT 10;
