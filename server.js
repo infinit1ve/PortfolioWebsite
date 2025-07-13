@@ -55,6 +55,7 @@ app.get('/api/lastUpdate', async (req, res) => {
 });
 
 const postgress = require('postgres');
+const { title } = require('process');
 const sql = postgress(process.env.SQL_KEY);
 
 app.get('/api/syncDB', async (req, res) => {
@@ -62,16 +63,35 @@ app.get('/api/syncDB', async (req, res) => {
     const articles = await sql`SELECT * FROM article`;
     articles.forEach(element => {
       var showdown  = require('showdown'),
-      converter = new showdown.Converter(),
-      convertedLead = converter.makeHtml(element.lead);
-      convertedTitle = converter.makeHtml(element.title);
-      convertedContent = converter.makeHtml(element.content);
+      converter = new showdown.Converter()
+      const convertedLead = converter.makeHtml(element.lead);
+      const convertedTitle = converter.makeHtml(element.title);
+      const convertedContent = converter.makeHtml(element.content);
+      const convertedDate = DateTime.fromJSDate(element.date).toFormat('dd.LL.yyyy')
       element.lead = convertedLead;
       element.title = convertedTitle;
       element.content = convertedContent;
+      element.date = convertedDate
     });
     res.json(articles);
   } catch (error) {
     console.error('Error fetching articles data:', error);
+  }
+});
+
+app.set('view engine', 'pug')
+app.set('views', './')
+app.get('/en/blog/:slug', async (req, res) => {
+  const slug = req.params.slug;
+  try {
+    const result = await sql`SELECT * FROM article WHERE slug = ${slug}`;
+    const article = result[0];
+    var showdown  = require('showdown'),
+      converter = new showdown.Converter()
+    const date = DateTime.fromJSDate(article.date).toFormat('dd.LL.yyyy');
+    const convertedContent = converter.makeHtml(article.content);
+    res.render('index', { title: `${article.title}`, date: `${date}`, content: `${convertedContent}` });
+  } catch (err) {
+    res.redirect('/en/blog');
   }
 });

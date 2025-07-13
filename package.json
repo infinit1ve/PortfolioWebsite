@@ -19,6 +19,7 @@
     "luxon": "^3.6.1",
     "node-datetime": "^2.1.2",
     "postgres": "^3.4.7",
+    "pug": "^3.0.3",
     "showdown": "^2.1.0"
   }
 }

@@ -1,0 +1,72 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  // Light & dark mode support
+  meta(name='theme-color' media='(prefers-color-scheme: light)' content='#f2fcfd')
+  meta(name='theme-color' media='(prefers-color-scheme: dark)' content='#020c0d')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../../styles/global.css')
+  link(rel='stylesheet' href='../../styles/header.css')
+  link(rel='stylesheet' href='../../styles/footer.css')
+  link(rel='stylesheet' href='../../styles/satoshi.css')
+  link(rel='stylesheet' href='../../styles/article.css')
+  link(rel='icon' href='../../images/icons/infinitive/GlyphBlack.svg' type='image/svg+xml' media='(prefers-color-scheme: light)')
+  link(rel='icon' href='../../images/icons/infinitive/GlyphWhite.svg' type='image/svg+xml' media='(prefers-color-scheme: dark)')
+  link(rel='icon' href='../../images/icons/infinitive/GlyphBlack.ico' type='image/x-icon' media='(prefers-color-scheme: light)')
+  link(rel='icon' href='../../images/icons/infinitive/GlyphWhite.ico' type='image/x-icon' media='(prefers-color-scheme: dark)')
+  title= title + '- infinitive'
+header.header
+  a(href='https://infinitive.cc')
+    img#logo(src='../../images/icons/infinitive/GlyphBlack.svg')
+  div
+    a(href='../index.html#about-section') About me
+    a(href='../index.html#contact-section') Contact
+    a(href='./') Blog
+    a(href='') Projects
+#message.message
+main
+  article
+    header
+      h1= title
+      p
+        time(datetime='2025-06-20')= date
+        |  &bull; 
+        a(itemprop='author' href='https://chatgpt.com') author
+    block!= content
+footer.footer
+  a(href='https://infinitive.cc')
+    img.mainlogo(src='../../images/icons/infinitive/FullDomainWhite.svg')
+  .footer-sections
+    div
+      p
+        b Links
+      a(href='mailto:contact@infinitive.cc') Email
+      a(href='/en/blog/') Blog
+      a(href='https://github.com/infinit1ve') GitHub
+      a(href='https://linkedin.com/in/maksym-tarashchan') LinkedIn
+      a(href='https://discord.com/users/480303566653882370') Discord Profile
+    div
+      p
+        b Legal
+      a(href='/en/privacy/') Privacy Policy
+      a(href='/en/imprint/') Imprint
+    div
+      p
+        b Other
+      a(href='https://www.flaticon.com/uicons') Uicons by Flaticon
+      select#localeSelector(name='language')
+        option(value='en' selected='') &#xF1EC;&#xF1E7; English
+        option(value='de' disabled='') &#xF1E9;&#xF1EA; Deutsch
+  p.footer-note
+    | Last updated on 
+    span#date-text
+    br
+    | &copy; 
+    span#copyright-year 2025
+    |  - Built by Maksym with 
+    a(href='../secret/') &#x2764;&#xFE0F;
+script(src='../../scripts/resize.js')
+script(src='../../scripts/lastUpdate.js')
+script(src='../../scripts/locale.js')
+script(src='../../scripts/luxon.js')
+script(src='../../scripts/query.js')
