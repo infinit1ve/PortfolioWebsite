@@ -13,5 +13,17 @@ fetch('/api/latestArticles')
 fetch('/api/getArticles')
   .then(response => response.json())  // parse JSON from the response
   .then(data => {
-    
+    const recentArticleList = document.getElementById('allblogposts-box')
+    data.forEach(element => {
+      const recentArticle = document.createElement('a');
+      recentArticle.href = "/en/blog/" + element.slug;
+      recentArticle.classList.add('blogpost-small');
+      recentArticle.innerHTML = `<div>
+            <h5>${element.title}</h5>
+            <p class="blogpost-date">${element.date}</p>
+            <p>${element.lead}</p>
+          </div>
+          <img class="icon" src="/images/icons/arrow-small-right.svg">`;
+      recentArticleList.append(recentArticle);
+    });
   });

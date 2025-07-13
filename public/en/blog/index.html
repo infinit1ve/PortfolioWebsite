@@ -34,6 +34,23 @@
       <div class="blogposts-box" id="blogposts-box">
       </div>
     </div>
+    <div class="allblogposts">
+      <h4>All blogposts</h4>
+      <search>
+        <input placeholder="Find an article..." id="search-input" enterkeyhint="search">
+        <button id="search-button" onclick="searchBlog();"><img src="/images/icons/search.svg"></button>
+      </search>
+      <div class="allblogposts-box" id="allblogposts-box">
+        <a href="" class="blogpost-small">
+          <div>
+            <h5>Title</h5>
+            <p class="blogpost-date">12.12.1212</p>
+            <p>lead...</p>
+          </div>
+          <img class="icon" src="/images/icons/arrow-small-right.svg">
+        </a>
+      </div>
+    </div>
     <footer class="footer">
       <a href="https://infinitive.cc"><img class="mainlogo" src="../../images/icons/infinitive/FullDomainWhite.svg"></a>
       <div class="footer-sections">
@@ -67,5 +84,6 @@
     <script src="../../scripts/locale.js"></script>
     <script src="../../scripts/query.js"></script>
     <script src="../../scripts/fetchArticles.js"></script>
+    <script src="../../scripts/searchBlog.js"></script>
   </body>
 </html>
