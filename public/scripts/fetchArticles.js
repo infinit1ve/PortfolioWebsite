@@ -5,7 +5,7 @@ fetch('/api/latestArticles')
     data.forEach(element => {
       const recentArticle = document.createElement('div');
       recentArticle.classList.add('blogpost');
-      recentArticle.innerHTML = `<h5>${element.title}</h5><p class="blogpost-date">${element.date}</p>${element.lead}<a href="/en/blog/${element.slug}">Read more <img src="/images/icons/arrow-small-right.svg" class="icon"></a>`;
+      recentArticle.innerHTML = `<a style="color: var(--text);"href="/en/blog/${element.slug}"><h5>${element.title}</h5><p class="blogpost-date">${element.date}</p>${element.lead}<a href="/en/blog/${element.slug}">Read more <img src="/images/icons/arrow-small-right.svg" class="icon"></a></a>`;
       recentArticleList.append(recentArticle);
     });
   });
