@@ -8,7 +8,7 @@
     function langRedirect() {
       const userLanguage = navigator.language || navigator.userLanguage;
       if(userLanguage.slice(0, 2) !== "en" && userLanguage.slice(0, 2) !== "de") {
-        window.location.href = `/en/${window.location.hash}${window.location.search};`;
+        window.location.href = `/en/${window.location.hash}${window.location.search}`;;
       } else {
         window.location.href = `/${userLanguage.slice(0, 2)}/${window.location.hash}${window.location.search}`;
       };
