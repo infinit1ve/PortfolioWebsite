@@ -53,8 +53,8 @@
 @media (min-width: 1024px) {
   /* e.g., increase padding/margins, show sidebars */
   .blogposts {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 23vw 23vw 23vw;
     gap: 4vw;
   }
 }
