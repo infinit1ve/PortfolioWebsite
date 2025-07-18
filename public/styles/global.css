@@ -5,7 +5,7 @@
     --primary: rgb(76, 46, 198);
     --secondary: rgb(206, 197, 250);
     --accent: ;
-    --shadow: rgba(76, 46, 198, 0.1);
+    --shadow: rgba(76, 46, 198, 0.15);
     --brand-icon: rgb(0, 0, 0);
   }
   .icon {
@@ -20,7 +20,7 @@
     --primary: rgb(142, 43, 218);
     --secondary: rgb(209, 186, 249);
     --accent: ;
-    --shadow: rgba(142, 43, 218, 0.1);
+    --shadow: rgba(142, 43, 218, 0.3);
     --brand-icon: rgb(255, 255, 255);
   }
   .icon {
@@ -59,8 +59,13 @@ body {
 
 input {
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-size: 16px;
   color: var(--text);
+  background-color: var(--background);
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 h1, h2, h3, h4, h5 {

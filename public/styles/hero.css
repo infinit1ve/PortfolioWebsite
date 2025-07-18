@@ -1,5 +1,5 @@
 .hero-section {
-  height: 100vh;
+  height: calc(100vh - 70px);
   width: 76vw;
   display: flex;
   align-items: flex-start;

@@ -17,10 +17,18 @@ search input:focus {
 search button {
   position: absolute;
   margin-left: -38px;
-  margin-top: 12px;
-  background-color: white;
+  margin-top: 14px;
+  background-color: var(--background);
   border: none;
   z-index: 2;
+}
+
+.search-box {
+  box-shadow: 5px 5px 10px var(--shadow);
+}
+  
+search button img {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(11%) saturate(1115%) hue-rotate(216deg) brightness(102%) contrast(95%);
 }
 
 search img {

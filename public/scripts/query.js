@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     msgBox.innerHTML = msgMap[`${locale}`][`${msgid}`];
     msgBox.style.display = "";
   } else {
-    msgBox.innerHTML = `<p>The website is currently under construction, expect changes, broken links, and placeholder content</p>`;
+    msgBox.innerHTML = ``;
     msgBox.style.display = "";
   }
 });
